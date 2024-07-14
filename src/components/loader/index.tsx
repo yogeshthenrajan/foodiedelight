@@ -11,7 +11,7 @@ export function Loader() {
             width={"100vw"}
             overflow={"hidden"}
         >
-            <Spinner color="primary"/> <Box as="span" marginLeft={"10px"}>Loading...</Box>
+            <Spinner color="primary"/><Box as="span" marginLeft={"10px"}>Loading...</Box>
         </Flex>
     )
 }

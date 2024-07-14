@@ -8,17 +8,24 @@ import { isObjectEmpty } from "@/utils";
 const localStorageData = localStorage.getItem('user');
 const userData = localStorageData ? JSON.parse(localStorageData) : {};
 
+//Initial state of aith context.
 const authState: IAuthState = {
     isUserLoggedIn: !isObjectEmpty(userData) ? userData.isUserLoggedIn : false,
     userId: !isObjectEmpty(userData) ? userData.userId : null,
     rights: !isObjectEmpty(userData) ? userData.rights : [],
 }
 
+//Creating auth context.
 const AuthContext = createContext(authState)
 
 export function AuthProvider({ children }: IReactChildrenProp) {
     const [user, setUser] = useState(authState);
 
+    /**
+     * Login method.
+     * 
+     * @param {User} - user 
+     */
     function login(user: User) {
         setUser({
             isUserLoggedIn: true,
@@ -35,6 +42,9 @@ export function AuthProvider({ children }: IReactChildrenProp) {
         window.location.replace('/');
     }
 
+    /**
+     * Logout method.
+     */
     function logout() {
         setUser({
             isUserLoggedIn: false,
@@ -47,6 +57,13 @@ export function AuthProvider({ children }: IReactChildrenProp) {
         window.location.replace('/login');
     }
 
+    /**
+     * This will check weather the user has the specific permission or not.
+     * 
+     * @param {String} - moduleKey 
+     * @param {Array<string>} - rights 
+     * @returns {Boolean}
+     */
     function hasAccessRights(moduleKey: string, rights: Array<string>) {
         const mKey = moduleKeys[moduleKey];
         const requiredRights = requiredPermissions[mKey];
@@ -61,4 +78,5 @@ export function AuthProvider({ children }: IReactChildrenProp) {
     )
 }
 
+//Exporiting as useAuth hook.
 export const useAuth = () => useContext(AuthContext);

@@ -1,6 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
 import '@fontsource/roboto'
 
+/**
+ * Creating global common theme for app.
+ */
 export const CustomizedTheme = extendTheme({
     fonts: {
         body: `'Roboto', sans-serif`

@@ -14,8 +14,9 @@ export function Error404() {
             <Image
                 src={PageNotFoundImage}
                 width={"20%"}
+                alt="Page not found"
             />        
-            <Text marginTop={"20px"} cursor={"pointer"} onClick={() => window.location.replace('/login') } > Click here to go login. </Text>
+            <Text marginTop={"20px"} cursor={"pointer"} onClick={() => window.location.replace('/login') } >Click here to go login.</Text>
         </Flex>
     )
 }

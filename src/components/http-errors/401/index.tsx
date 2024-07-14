@@ -14,6 +14,7 @@ export function Error401() {
             <Image
                 src={UnAuthorisedImage}
                 width={"20%"}
+                alt="Unauthorised"
             />        
             <Text marginTop={"20px"} cursor={"pointer"} onClick={() => window.location.replace('/login') } > Click here to go login. </Text>
         </Flex>
