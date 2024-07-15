@@ -109,62 +109,6 @@
       },
       "cuisine": "2",
       "description": "Experience the flavors of China at Dragon Garden.",
-      "name": "Dragon Garden teas",
-      "createdAt": "2024-01-03T12:00:00Z",
-      "updatedAt": "2024-01-04T12:00:00Z",
-      "id": "restuarant-1"
-    },
-    {
-      "tags": "chins",
-      "status": "true",
-      "menuItems": [
-        {
-          "menu": {
-            "tags": "nuts",
-            "price": 13,
-            "foodType": "2",
-            "cuisine": "2",
-            "description": "Spicy stir-fried chicken with peanuts and vegetables.",
-            "name": "Kung Pao Chicken",
-            "type": 2
-          }
-        },
-        {
-          "menu": {
-            "tags": "vegetarian,appetizer",
-            "price": 5,
-            "foodType": "2",
-            "cuisine": "2",
-            "description": "Crispy spring rolls with mixed vegetables.",
-            "name": "Vegetable Spring Rolls",
-            "type": 1
-          }
-        }
-      ],
-      "contacts": {
-        "primary": {
-          "mobile": "234-567-8901",
-          "email": "contact@dragongarden.com"
-        },
-        "secondary": {
-          "mobile": "876-543-2109",
-          "email": "support@dragongarden.com"
-        },
-        "website": "https://www.dragongarden.com"
-      },
-      "location": {
-        "latitude": 34.0522,
-        "longitude": -118.2437,
-        "address": {
-          "streetName": "456 Dragon Ave",
-          "city": "Los Angeles",
-          "state": "CA",
-          "country": "USA",
-          "zipcode": "90001"
-        }
-      },
-      "cuisine": "2",
-      "description": "Experience the flavors of China at Dragon Garden.",
       "name": "Dragon Garden 2",
       "createdAt": "2024-01-03T12:00:00Z",
       "updatedAt": "2024-01-04T12:00:00Z",
