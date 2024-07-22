@@ -6,14 +6,14 @@ const Error404 = React.lazy(() => import('@/components/http-errors/404'))
 export const httpErrorRoutes = [
     {
         path: '/unauthorized',
-        element: Error401,
+        element: <Error401 />,
     },
     {
         path: '/page-not-found',
-        element: Error404,
+        element: <Error404 />,
     },
     {
         path: '*',
-        element: Error404,
+        element: <Error404 />,
     }
 ]

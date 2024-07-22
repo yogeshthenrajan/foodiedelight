@@ -34,7 +34,7 @@ export function RestuarantList() {
         const [_, restaurantName] = queryKey;
 
         return getRestuarantsCount(restaurantName)
-    })    
+    })
 
     const { isLoading: isRestuarantsLoading, data: restuarants, refetch } = useQuery(['restuarants-list', page, filterKeyword], ({ queryKey }) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -100,8 +100,6 @@ export function RestuarantList() {
         })
     }
 
-    if (isRestaurantsCountLoading || isRestuarantsLoading || isCuisinesLoading) return <Loader />
-
     return (
         <>
             <Card padding={'10px'}>
@@ -121,7 +119,9 @@ export function RestuarantList() {
                 marginTop={'20px'}
                 width={"100%"}
             >
-                <CardBody>
+                <CardBody
+                    minHeight={'500px'}
+                >
                 <Flex
                     as='div'
                     justifyContent={"flex-end"}
@@ -135,7 +135,9 @@ export function RestuarantList() {
                         onChange={(e) => setFilterText(e.target.value)}
                     />
                 </Flex>
-                <TableContainer>
+                {(isRestaurantsCountLoading || isRestuarantsLoading || isCuisinesLoading)  ? <Loader styles={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} /> :
+                (<>
+                    <TableContainer>
                     <Table>
                         <TableCaption>List of restuarants - {page * 10} of {restuarantsCount}</TableCaption>
                         <Thead>
@@ -202,6 +204,7 @@ export function RestuarantList() {
                         Next
                     </Button>
                 </Flex>
+                </>)}
                 </CardBody>
             </Card>
         </>

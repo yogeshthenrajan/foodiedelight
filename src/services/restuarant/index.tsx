@@ -19,7 +19,7 @@ export const getRestuarants = async (_page: number = 1, filterKeyword: string = 
  * @returns {Array<Restuarants>}
  */
 export const getAllRestuarants = async (filterKeyword = '') => {
-    return await httpClient.get<Array<Restaurant>>(`restaurants`  + (filterKeyword ? `&name=${filterKeyword}` : '') )
+    return await httpClient.get<Array<Restaurant>>(`restaurants` + (filterKeyword ? `?name=${filterKeyword}` : '') )
 }
 
 /**

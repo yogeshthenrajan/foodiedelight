@@ -1,11 +1,13 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks";
+import { ReactNode } from "react";
 
 interface IProtectedRoute {
-    permissions: Array<string>   
+    permissions: Array<string>,
+    element: ReactNode
 }
 
-export function ProtectedRoute({ permissions }: IProtectedRoute) {
+export function ProtectedRoute({ permissions, element: Element }: IProtectedRoute) {
     const { isUserLoggedIn, userId, rights }  = useAuth();
     
     if (!isUserLoggedIn || !userId) {
@@ -17,5 +19,5 @@ export function ProtectedRoute({ permissions }: IProtectedRoute) {
         return <Navigate to="/unauthorized" />;
     }
 
-    return <Outlet />;
+    return Element;
 }

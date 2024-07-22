@@ -53,7 +53,7 @@ export function Login() {
             justifyContent={'center'}
             height={'100vh'}
             width={'100vw'}
-            bg={"secondary"}
+            bg={"#fff"}
         >
             <Box
                 as="div"

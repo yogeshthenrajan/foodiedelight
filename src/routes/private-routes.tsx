@@ -10,21 +10,21 @@ export const privateRoutes = [
     {
         path: '/',
         exact: true,
-        element: Dashboard,
+        element: <Dashboard />,
         permissions: [
             `dashboard`
         ]
     },
     {
         path: '/dashboard',
-        element: Dashboard,
+        element: <Dashboard />,
         permissions: [
             `dashboard`
         ]
     },
     {
         path: "/restuarants/create",
-        element: RestuarantCreate,
+        element: <RestuarantCreate />,
         permissions: [
             `restuarants`,
             `restuarants:create`
@@ -32,7 +32,7 @@ export const privateRoutes = [
     },
     {
         path: "/restuarants",
-        element: RestuarantList,
+        element: <RestuarantList />,
         permissions: [
             `restuarants`,
             `restuarants:list`
@@ -40,7 +40,7 @@ export const privateRoutes = [
     },
     {
         path: "/restuarants/edit/:id",
-        element: RestuarantEdit,
+        element: <RestuarantEdit />,
         permissions: [
             `restuarants`,
             `restuarants:edit`
@@ -48,7 +48,7 @@ export const privateRoutes = [
     },
     {
         path: '/profile',
-        element: Profile,
+        element: <Profile />,
         permissions: [
             `profile`
         ]

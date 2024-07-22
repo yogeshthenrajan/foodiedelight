@@ -22,7 +22,7 @@ export function MainContent({ isSideNavOpened }: IMainContentProps) {
             overflowX={'hidden'}
             overflowY={'auto'}
             padding={'20px'}
-            bg={"secondary"}
+            bg={"#fff"}
         >
             <Box
                 as="section"

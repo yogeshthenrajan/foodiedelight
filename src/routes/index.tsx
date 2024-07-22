@@ -15,25 +15,19 @@ export function AppRoute() {
             <Routes>
                 {/* Rendering public routes */}
                 {
-                    publicRoutes.map((route, index) => <Route key={`route-${index}`} path={route.path} Component={route.element} />)
+                    publicRoutes.map((route, index) => <Route key={`route-${index}`} path={route.path} element={route.element} />)
                 }
 
                 {/* Setting the common layout for admin portal and checking with Protected route */}
                 <Route element={<Layout />}>
                 {
-                    privateRoutes.map((route, index) => {
-                        return (
-                            <Route key={`route-${index}`}  element={<ProtectedRoute permissions={route.permissions} />}>
-                                <Route Component={route.element} path={route.path} />
-                            </Route>
-                        )
-                    })
-                }           
+                    privateRoutes.map((route, index) => <Route key={`route-${index}`} path={route.path} element={<ProtectedRoute permissions={route.permissions} element={route.element}/>} />)
+                }
                 </Route>
 
                 {/* Rendering http route errors */}
                 {
-                    httpErrorRoutes.map((route, index) => <Route key={`route-${index}`} path={route.path} Component={route.element} />)
+                    httpErrorRoutes.map((route, index) => <Route key={`route-${index}`} path={route.path} element={route.element} />)
                 }
             </Routes>
         </Suspense>
